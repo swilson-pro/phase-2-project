@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 //  Goal is to filter out and display the company products on the page
 //  when the create button is clicked it will direct to MyCompanyProducts
 // Createnewproduct will then have input info then it will be posted on MyCompanyProducts
@@ -27,17 +28,18 @@ function Createnewproduct({ onAddMakeUp }) {
     })
     .then((res) => res.json())
     .then((newMakeUp) => onAddMakeUp(newMakeUp))
+
   })
 
   console.log(makeUpName , makeUpBrand , makeUpImage, makeUpPrice)
 
   return (
     <div>
-      <header>
+      <div className="new-makeup-header">
         <img src='empowering_makeup_logo.png' alt='your logo' />
         <h1>Create New Product</h1>
-      </header>
-      <body className="create-new-makeup-container">
+      </div>
+      <div className="create-new-makeup-container">
         {/* i need an input for brand, name, price, image link, and description */}
         <form onSubmit={handleMakeUpSubmit} className="make-up-form">
           <input type="text"
@@ -66,8 +68,7 @@ function Createnewproduct({ onAddMakeUp }) {
           />
           <button type="submit">Create New Product</button>
         </form>
-
-      </body>
+      </div>
     </div>
   )
 }

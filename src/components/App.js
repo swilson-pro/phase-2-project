@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from "react";
+import '../App.css'
 import { Route, Switch } from "react-router-dom";
+
 import NavBar from "./NavBar";
 import Home from "./Home";
-import Createnewproduct from "./CreateNewProduct/Createnewproduct";
+import Createnewproduct from "./Createnewproduct";
 import Savedproducts from "./Savedproducts";
 import Favorites from "./Favorites";
 import MyCompanyProducts from "./MyCompanyProducts";
+import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 
 function App() {
 
@@ -55,9 +58,6 @@ function ifImageError(id) {
   }))
 }
 
-
-
-
   console.log('makeupList', makeupList)
   console.log('displayedMakeupList', displayedList)
   // console.log('newdisplayedMakeupList', newdisplayedMakeupList)
@@ -76,7 +76,7 @@ function ifImageError(id) {
         <MyCompanyProducts />
       </Route>
       <Route path='/createnewproduct'>
-        <Createnewproduct onAddMakeUp={handleMakeUpSubmit} />
+        <Createnewproduct className="create-new-product" onAddMakeUp={handleMakeUpSubmit}/>
       </Route>
 
       <Route path='/'>

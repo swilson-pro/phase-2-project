@@ -14,10 +14,19 @@ useEffect(() => {
   .then((res) => res.json())
   .then((myMakeUpProducts) => {setMyMakeUpProducts(myMakeUpProducts)})
 })
+
+
     return (
       <div>
+        <h1>My Company</h1>
+        {/* <ul>
+          {myMakeUpProducts.map((makeup) =>
+            return <MakeupTable key={makeup.id} makeup={makeup} /> 
+          )}
+        </ul> */}
         {/* <MakeupTable makeup={makeup} /> */}
       </div>
+
     );
   };
 
