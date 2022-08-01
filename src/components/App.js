@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import '../App.css'
+
 import { Route, Switch } from "react-router-dom";
 
 import NavBar from "./NavBar";
@@ -15,6 +15,8 @@ function App() {
   const [makeupList, setMakeupList] = useState([])
   const [displayedList, setDisplayedList] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+
+  const [newProductArray , setNewProductArray]=useState([])
 
   const baseUrl = 'https://makeup-api.herokuapp.com/api/v1/products.json?'
 
@@ -39,6 +41,12 @@ function App() {
     }))
   }
 
+  const fetchNewArray = async () => {
+    const res = await fetch('http://localhost:3000/products')
+    const newMakeUpArrayFetch = await res.json();
+    setNewProductArray(newMakeUpArrayFetch)
+  }
+
   // function to create new array when a new make-up is added
   const handleMakeUpSubmit = (newMakeUp) => {
     const updatedMakeUpArray = [...makeupList , newMakeUp]
@@ -48,6 +56,7 @@ function App() {
   useEffect(() => {
     fetchMaybellineList()
     fetchMakeupList()
+    fetchNewArray()
   }, [])
 
   
@@ -76,7 +85,7 @@ function ifImageError(id) {
         <MyCompanyProducts />
       </Route>
       <Route path='/createnewproduct'>
-        <Createnewproduct className="create-new-product" onAddMakeUp={handleMakeUpSubmit}/>
+        <Createnewproduct className="create-new-product" onAddMakeUp={handleMakeUpSubmit} newProductArray={newProductArray} setNewProductArray={setNewProductArray}/>
       </Route>
 
       <Route path='/'>

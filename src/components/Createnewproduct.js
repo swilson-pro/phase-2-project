@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import MakeupCard from "./MakeupCard";
 
 //  Goal is to filter out and display the company products on the page
 //  when the create button is clicked it will direct to MyCompanyProducts
 // Createnewproduct will then have input info then it will be posted on MyCompanyProducts
 
-function Createnewproduct({ onAddMakeUp }) {
+function Createnewproduct({ onAddMakeUp, newProductArray, setNewProductArray }) {
 
   const [makeUpName, setMakeUpName] = useState("")
   const [makeUpBrand, setMakeUpBrand] = useState("")
@@ -27,8 +27,8 @@ function Createnewproduct({ onAddMakeUp }) {
       }) ,
     })
     .then((res) => res.json())
-    .then((newMakeUp) => onAddMakeUp(newMakeUp))
-
+      .then((newMakeUp) => setNewProductArray([...newProductArray, newMakeUp]))
+    
   })
 
   console.log(makeUpName , makeUpBrand , makeUpImage, makeUpPrice)
@@ -68,6 +68,15 @@ function Createnewproduct({ onAddMakeUp }) {
           />
           <button type="submit">Create New Product</button>
         </form>
+        <ul>
+          {
+            newProductArray.map((makeup) => {
+              return (
+                <MakeupCard key={makeup.id} makeup={makeup} />
+              )
+            })
+          }
+        </ul>
       </div>
     </div>
   )
