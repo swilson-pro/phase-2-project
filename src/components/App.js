@@ -36,6 +36,12 @@ function App() {
     }))
   }
 
+  // function to create new array when a new make-up is added
+  const handleMakeUpSubmit = (newMakeUp) => {
+    const updatedMakeUpArray = [...makeupList , newMakeUp]
+    setMakeupList(updatedMakeUpArray)
+  }
+
   useEffect(() => {
     fetchMaybellineList()
     fetchMakeupList()
@@ -70,7 +76,7 @@ function ifImageError(id) {
         <MyCompanyProducts />
       </Route>
       <Route path='/createnewproduct'>
-        <Createnewproduct />
+        <Createnewproduct onAddMakeUp={handleMakeUpSubmit} />
       </Route>
 
       <Route path='/'>

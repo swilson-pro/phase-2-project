@@ -4,12 +4,12 @@ import React, { useState } from "react";
 //  when the create button is clicked it will direct to MyCompanyProducts
 // Createnewproduct will then have input info then it will be posted on MyCompanyProducts
 
-function Createnewproduct({ }) {
+function Createnewproduct({ onAddMakeUp }) {
 
-  const [makeUpName, setMakeUpName] = ("")
-  const [makeUpBrand, setMakeUpBrand] = ("")
-  const [makeUpImage, setMakeUpImage] = ("")
-  const [makeUpPrice, setMakeUpPrice] = ("")
+  const [makeUpName, setMakeUpName] = useState("")
+  const [makeUpBrand, setMakeUpBrand] = useState("")
+  const [makeUpImage, setMakeUpImage] = useState("")
+  const [makeUpPrice, setMakeUpPrice] = useState("")
 
   const handleMakeUpSubmit = ((e) => {
     e.preventDefault()
@@ -26,7 +26,7 @@ function Createnewproduct({ }) {
       }) ,
     })
     .then((res) => res.json())
-    .then(console.log())
+    .then((newMakeUp) => onAddMakeUp(newMakeUp))
   })
 
   console.log(makeUpName)
