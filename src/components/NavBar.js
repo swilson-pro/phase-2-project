@@ -3,12 +3,13 @@ import {NavLink} from 'react-router-dom';
 
 function NavBar() {
     return (
-        <div className='navbar'>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/mycompanyproducts'>My Company Products</NavLink>
-        <NavLink to='/favorites'>Favorites</NavLink>
-        <NavLink to='/savedproducts'>Savedproducts</NavLink>
-        <NavLink to='/createnewproduct'>Create New Product</NavLink>        </div>
+        <div className='container'>
+            <NavLink to='/'><button>Home</button></NavLink>
+            <NavLink to='/mycompanyproducts'>{<button>My Company Products</button>}</NavLink>
+            <NavLink to='/favorites'>{<button>Favorites</button>}</NavLink>
+            <NavLink to='/savedproducts'>{<button>Saved Products</button>}</NavLink>
+            <NavLink to='/createnewproduct'>{<button>Create New Product</button>}</NavLink>        
+        </div>
     )
 }
 

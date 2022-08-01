@@ -7,8 +7,8 @@ function MakeupCard ({makeup,ifImageError}) {
     return (
         <li className='card'>
             <img src={image_link} alt={name} onError={()=> ifImageError(id)} />
-            <h4>{name}</h4>
-            <h3>{brand}</h3>
+            <h3>{name}</h3>
+            <h4>{brand}</h4>
             <p>Price: {parseFloat(price)}</p>
             <button className="primary">Add to Favorites</button>
         </li>
