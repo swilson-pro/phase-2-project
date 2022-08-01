@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
-import Createnewproduct from "./Createnewproduct";
+import Createnewproduct from "./CreateNewProduct/Createnewproduct";
 import Savedproducts from "./Savedproducts";
 import Favorites from "./Favorites";
 import MyCompanyProducts from "./MyCompanyProducts";

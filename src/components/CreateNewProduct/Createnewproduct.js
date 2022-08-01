@@ -29,7 +29,7 @@ function Createnewproduct({ onAddMakeUp }) {
     .then((newMakeUp) => onAddMakeUp(newMakeUp))
   })
 
-  console.log(makeUpName)
+  console.log(makeUpName , makeUpBrand , makeUpImage, makeUpPrice)
 
   return (
     <div>
