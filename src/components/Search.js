@@ -4,7 +4,7 @@ function Search({searchTerm,setSearchTerm}) {
     console.log('searchTerm', searchTerm)
     return (
         <div className='searchbar'>
-            <label htmlFor='search'>Search Products:</label>
+            <label htmlFor='search'>Search Products by Keyword:</label>
             <input
                 type='text'
                 id='search'

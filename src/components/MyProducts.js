@@ -1,7 +1,7 @@
 import React from "react"
 
 
-const MyCompanyProducts = () => {
+const MyProducts = () => {
 
     return (
       <div>
@@ -10,4 +10,4 @@ const MyCompanyProducts = () => {
     );
   };
 
-export default MyCompanyProducts
+export default MyProducts
