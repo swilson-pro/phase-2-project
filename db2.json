@@ -1,19 +1,22 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "image_link": "https://cdn.shopify.com/s/files/1/1084/6524/products/ATD-Concealer-tin-_10_600x.jpg?v=1650641069",
+      "name": "Anne T. Dotes",
+      "product_type": "Concealer",
+      "brand": "theBalm",
+      "price": 16,
+      "description": "DESCRIPTION\nAnne T. Dotes Concealer is a clean, stealth, skin perfectionist. Finally making her debut, this adorable, 100% recyclable tin makes this little lady extremely desirable. Not to mention, her ability to conceal redness, discoloration, and under-eye circles is un’can’ny. Loaded with good-for-your-skin ingredients like Organic Jojoba and Sunflower Oils, this remedy is always at your fingertips ready to assist. Available in 10 gorgeous shades.\n\nOur Shade Match Guarantee:\n\nAnne T. Dotes promises more than just skin-perfecting coverage, she wants to make sure you have the perfect shade and she won’t stop until you do! Live Chat or email us your clean-faced selfie and we’ll recommend the right shade. Still not a perfect match at home? Anne T. Dotes to the rescue – contact us and we’ll replace it with the right one. See our return policy for more details.",
+      "id": 4
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "image_link": "https://cdn.shopify.com/s/files/1/1084/6524/products/theBalmbina-open-1-w-icon-01_1400x1400.jpg?v=1636989917",
+      "name": "THEBALMINA",
+      "product_type": "Face Palette",
+      "brand": "theBalm",
+      "price": 32,
+      "description": "Congratulations, It’s a Palette! This newbie palette delivers everything you need with the best of theBalm! You may think octuplet girls are a handful, but these 8 shades of theBalmbina give you ample coverage. This all-inclusive, pretty little lady is full of our clean and green must haves. As no two little ones are alike, this breaks down to 4 blendable eyeshadows, two stunning blushes, a matte bronzer, and our newest highlight shimmer, Let’s Bolt. Each powder is versatile and can be used anywhere on your face, so get ready to light up your life.",
+      "id": 5
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

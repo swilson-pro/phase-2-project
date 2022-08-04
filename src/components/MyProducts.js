@@ -1,12 +1,23 @@
 import React from "react"
+import MakeupC3 from "./MakeupC3";
 
 
-const MyProducts = () => {
+const MyProducts = ({makeupList, deleteProduct}) => {
+
+  console.log('MyProductsmakeuplist', makeupList)
 
     return (
-      <div>
-        <h1>Insert Company Products Page</h1>
-      </div>
+      <main>
+        <ul className='cards'>
+        {makeupList.map((makeup) => {
+            return <MakeupC3 
+            key={makeup.id} 
+            makeup={makeup}
+            deleteProduct={deleteProduct}
+            />
+    })}
+        </ul>
+      </main>
     );
   };
 

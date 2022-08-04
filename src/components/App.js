@@ -19,20 +19,67 @@ function App() {
   const [prodType, setProdType] = useState('blush')
   let [url, setUrl] = useState(`https://makeup-api.herokuapp.com/api/v1/products.json?`)
   const [favoritesArray, setFavoritesArray] = useState([])
+  const [myProductsList, setMyProductsList] = useState([])
 
   const baseUrl = 'https://makeup-api.herokuapp.com/api/v1/products.json?'
 
-//console.log('brand', brand)
+console.log('myProductsList', myProductsList)
   
-  const fetchMakeupList = async (fetchwhat) => {
-    const response = await fetch(fetchwhat)
-    const makeupListArray = await response.json();
-    setIsLoading(false)
-    setMakeupList(makeupListArray)
-    setDisplayedList(makeupListArray.filter(makeup => {
-      return parseFloat(makeup.price) != "0.0" 
-    }))
+// const fetchMyProductsList = async () => {
+//   const prodListResponse = await fetch('http://localhost:3002/posts')
+//   const myProductsListArray = await prodListResponse.json()
+//   setMyProductsList(myProductsListArray)
+//   setMakeupList(myProductsListArray)
+// }
+
+//   const fetchMakeupList = async (fetchwhat, brand, prodType) => {
+
+//     // fetchMyProductsList:
+// const prodListResponse = await fetch('http://localhost:3002/posts')
+// const myProductsListArray = await prodListResponse.json()
+// setMyProductsList(myProductsListArray)
+
+
+//     const response = await fetch(fetchwhat)
+//     const makeupListArray = await response.json();
+//     setIsLoading(false)
+//     const combinedListArray = makeupListArray.concat(myProductsListArray)
+//     //setMakeupList(makeupListArray.concat(myProductsListArray))
+//     setDisplayedList(combinedListArray.filter(makeup => {
+//       return parseFloat(makeup.price) != "0.0" 
+//     }))
+//   }
+
+const fetchMakeupList = async (brand, prodType) => {
+  const checkBrand = () => {
+    return brand ? `&brand=${brand}` : ''
   }
+
+  const checkProdType = () => {
+    return prodType ? `&product_type=${prodType}` : ''
+  }
+
+  const response = await fetch(`${url}${checkBrand()}${checkProdType()}`)
+  const makeupListArray = await response.json()
+  setMakeupList(makeupListArray)
+  setIsLoading(false)
+
+  const prodListResponse = await fetch('http://localhost:3002/posts')
+  const myProductsListArray = await prodListResponse.json()
+
+  setMyProductsList(myProductsListArray)
+  const filteredplist = myProductsListArray.filter((makeup) => {
+      if (brand && makeup.brand !== brand) {
+        return false
+      }
+      if (prodType && makeup.prodType !== prodType) {
+        return false
+      } else return true
+  })
+
+  setDisplayedList(makeupListArray.concat(filteredplist.map((makeup) => {return {...makeup, id: `M${makeup.id}`} })))
+
+}
 
   const fetchFavoritesList = async () => {
     const response = await fetch('http://localhost:3000/favorites')
@@ -45,20 +92,16 @@ function App() {
     console.log('does brand exist?', brand ? 'brand exists': 'brand does not exist')
     console.log('does prod type exist?', prodType ? 'prodType exists' : 'prodType does not exist')
 
-    if (brand && prodType) { fetchMakeupList(`${url}brand=${brand}&product_type=${prodType}`) } 
-    else if (brand) { fetchMakeupList(`${url}brand=${brand}`) }
-    else if (prodType) { fetchMakeupList(`${url}product_type=${prodType}`) }
-    else { fetchMakeupList(`${url}`) }
+    //fetchMyProductsList()
+    // if (brand && prodType) { fetchMakeupList(`${url}brand=${brand}&product_type=${prodType}`) } 
+    // else if (brand) { fetchMakeupList(`${url}brand=${brand}`) }
+    // else if (prodType) { fetchMakeupList(`${url}product_type=${prodType}`) }
+    // else { fetchMakeupList(`${url}`) }
+    fetchMakeupList(brand, prodType)
     fetchFavoritesList()
 
-    // brand ? fetchMakeupList(`${url}brand=${brand}`) : fetchMakeupList(`${url}`)
-
-  }, [prodType, brand, url] )
+  }, [prodType, brand, url, ] )
   
-const handleAddProduct = (newproduct) => {
-  setMakeupList([...makeupList, newproduct])
-}
-
 function ifImageError(id) {
   console.log('removing image')
   setDisplayedList(displayedList.filter(makeup => {
@@ -77,19 +120,23 @@ function updateBrand(e) {
 console.log('e.target.value', e.target.value)
   setBrand(e.target.value)
   
- // setUrl(`${baseUrl}brand=${e.target.value}`)
 }
 
 function updateProdType(e) {
   setProdType(e.target.value)
 }
 
-// console.log('brand', brand)
-//   console.log('makeupList', makeupList)
-//   console.log('displayedList', displayedList)
+  const newProduct = (newProd) => {
+    const updatedProductsArray = [...myProductsList, newProd]
+    setMyProductsList(updatedProductsArray)
+  }
 
+  const deleteProduct = (id) => {
+    console.log('delete this product:', id)
+    const newlyUpdatedProductsArray = myProductsList.filter((item) => item.id !== id);
+    setMyProductsList(newlyUpdatedProductsArray)
+  }
 
-  
   const newFavorite = (newFav) => {
     const updatedFavoritesArray = [...favoritesArray, newFav]
     setFavoritesArray(updatedFavoritesArray)
@@ -102,6 +149,9 @@ function updateProdType(e) {
 } 
 
 console.log('favoritesArray', favoritesArray)
+console.log('makeupList', makeupList)
+console.log('newDisplayedList', newDisplayedList)
+console.log('myProductsList', myProductsList)
 
   return (
   <div>
@@ -114,10 +164,10 @@ console.log('favoritesArray', favoritesArray)
         <Savedproducts />
       </Route>
       <Route path='/myproducts'>
-        <MyProducts />
+        <MyProducts deleteProduct={deleteProduct} makeupList={myProductsList} />
       </Route>
       <Route path='/newproductform'>
-        <NewProductForm handleAddProduct={handleAddProduct}/>
+        <NewProductForm newProduct={newProduct}/>
       </Route>
       <Route path='/'>
         {isLoading? <h1>Loading..</h1>: <Home favoritesArray={favoritesArray} removeFavorite={removeFavorite} newFavorite={newFavorite} updateProdType={updateProdType} prodType={prodType} updateBrand={updateBrand} brand={brand} setSearchTerm={setSearchTerm} searchTerm={searchTerm} ifImageError={ifImageError} makeupList={newDisplayedList}/>}

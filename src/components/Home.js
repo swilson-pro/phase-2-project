@@ -10,8 +10,9 @@ console.log('favoritesArray', favoritesArray)
   return (
     <main>
         {/* try to put a checkbox in the dropdown. */}
-        <label htmlFor='brands'>Choose a brand:</label>
-        <select name='brands' id='brands' onChange={updateBrand} value={brand} >
+        <div className="filter-div">
+        <label className='brand-label' htmlFor='brands'>Choose a brand:</label>
+        <select className='dropdown' name='brands' id='brands' onChange={updateBrand} value={brand} >
             <option value='revlon'>Revlon</option>
             <option value='maybelline'>Maybelline</option>
             <option value='covergirl'>Covergirl</option>
@@ -70,9 +71,9 @@ console.log('favoritesArray', favoritesArray)
             <option value='zorah%20biocosmetiques'>Zorah Biocosmetiques</option>
             <option value=''>All Brands</option>
         </select>
-        <label htmlFor='prodtypes'>Choose a product Type:</label>
+        <label className='brand-label' htmlFor='prodtypes'>Choose a product Type:</label>
 
-        <select name='prodtypes' id='prodtypes' onChange={updateProdType} value={prodType}>
+        <select className='dropdown' name='prodtypes' id='prodtypes' onChange={updateProdType} value={prodType}>
             <option value='blush'>Blush</option>
             <option value='bronzer'>Bronzer</option>
             <option value='eyebrow'>Eyebrow</option>
@@ -85,6 +86,7 @@ console.log('favoritesArray', favoritesArray)
             <option value='Nail%20polish'>Nail Polish</option>
             <option value=''>All Products</option>
         </select>
+        </div>
         <Search setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
 
         <ul className='cards'>

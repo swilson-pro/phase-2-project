@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import Collapse from './Collapse'
+
 function MakeupC2 ({removeFavorite, newFavorite, makeup,ifImageError}) {
     const {id, brand, name, price, image_link, description} = makeup
     const [isNotFavorite, setIsNotFavorite] = useState(false)
@@ -23,6 +25,13 @@ function MakeupC2 ({removeFavorite, newFavorite, makeup,ifImageError}) {
             <h4>{brand}</h4>
             <p>Price: {parseFloat(price)}</p>
             <button onClick={handleRemoveFromFavorites}>remove from favorites</button>
+            {description ? 
+        <Collapse collapsed={true}>
+            <div>
+                {description}
+            </div>
+        </Collapse>
+        : <div>No description</div>}
         </li>
     )
 }

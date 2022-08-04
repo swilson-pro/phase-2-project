@@ -1,29 +1,33 @@
 import React, {useState} from "react";
 
-function NewProductForm({handleAddProduct}) {
+function NewProductForm({newProduct}) {
   const [image, setImage] = useState('')
   const [name, setName] = useState('')
   const [brand, setBrand] = useState('')
   const [price, setPrice] = useState('')
+  const [productType, setProductType] = useState('')
+  const [description, setDescription] = useState('')
 
-  console.log({image, name, brand, price})
+  console.log({image, name, productType, brand, price, description})
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('https://makeup-api.herokuapp.com/api/v1/products.json?', {
+    fetch('http://localhost:3002/posts', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        image: image,
+        image_link: image,
         name: name,
+        product_type: productType,
         brand: brand,
         price: price,
+        description: description,
       })
     })
     .then(r => r.json())
-    .then(console.log)
+    .then(newMakeup => newProduct(newMakeup))
   }
 
   return ( 
@@ -45,6 +49,13 @@ function NewProductForm({handleAddProduct}) {
       onChange={(e) => setName(e.target.value)}
        />
       <input 
+      type="text"
+      name="prodtype"
+      placeholder="Product Type"
+      value={productType}
+      onChange={(e) => setProductType(e.target.value)}
+       />
+      <input 
       type="number"
       name="price"
       placeholder="Price"
@@ -58,6 +69,9 @@ function NewProductForm({handleAddProduct}) {
       value={brand}
       onChange={(e) => setBrand(e.target.value)}
        />
+
+      <textarea cols='200' rows='10' value={description} onChange={(e) => setDescription(e.target.value)} />
+      <br/>
       <button type="submit">Add a Product</button>
     </form>
   </div>

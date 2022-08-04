@@ -1,7 +1,8 @@
 //import '../lipstick.png'
 import {useState} from 'react'
+import Collapse from './Collapse'
 function MakeupCard ({isNotFavorite, removeFavorite, newFavorite, makeup,ifImageError}) {
-    const {id, brand, name, price, image_link, description} = makeup
+    const {id, brand, product_type, name, price, image_link, description} = makeup
 
     
 // if the item is already in the array, set the button to be 'remove from favorites'. 
@@ -20,6 +21,7 @@ function MakeupCard ({isNotFavorite, removeFavorite, newFavorite, makeup,ifImage
                 image_link: image_link,
                 price: price,
                 id: id,
+                description: description,
             }),
         })
         .then((res) => res.json())
@@ -43,8 +45,15 @@ function MakeupCard ({isNotFavorite, removeFavorite, newFavorite, makeup,ifImage
             <h4>{brand}</h4>
             <p>Price: {parseFloat(price)}</p>
             {isNotFavorite ? <button className="primary" onClick={handleAddToFavorites} >Add to Favorites</button> : 
-            <button onClick={handleRemoveFromFavorites}>remove from favorites</button>
-}
+            <button onClick={handleRemoveFromFavorites}>remove from favorites</button>}  
+        {description ? 
+        <Collapse collapsed={true}>
+            <div>
+                {description}
+            </div>
+        </Collapse>
+        : <div>No description</div>}
+
         </li>
     )
 }

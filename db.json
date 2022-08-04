@@ -1,3 +1,20 @@
 {
-  "favorites": []
+  "favorites": [
+    {
+      "name": "Maybelline Dream Bouncy Blush",
+      "brand": "maybelline",
+      "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/51eacb9efebbaee39399e65ffe3d9416_ra,w158,h184_pa,w158,h184.png",
+      "price": "11.99",
+      "id": 414,
+      "description": "Now, blush has bounce! Freshest flush ever:• New bouncy texture is formulated with silicone elastomers• Lightweight like a powder, yet melts seamlessly into skin like a cream giving you a fresh flush• Dermatologist tested• Allergy tested• Non-comedogenic\n                    \n                    \n                    \n                        \n                        For best results: With your fingertips, blend a small amount of\n blush onto the apples of your cheeks, applying from your cheekbones to \nyour temples. To build colour intensity, apply more blush. \n                    "
+    },
+    {
+      "name": "CoverGirl Outlast Lipcolor",
+      "brand": "covergirl",
+      "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/be04329866e96a0077545d230489d7a9_ra,w158,h184_pa,w158,h184.jpeg",
+      "price": "12.99",
+      "id": 102,
+      "description": "CoverGirls very popular longwear lip color just got better! The advanced formula with resilient, brilliant color and new applicator gives you up to 24 hours of color in just 2 easy, breezy steps.Features:Lasts up to 24 hoursBeautiful shades that are food proof and transfer resistant all day!Moisturizing topcoat keeps lips feeling moist, soft and smoothApplication Tips: Apply color to clean lips. Let dry 60 seconds. Apply moisturizing topcoat. Reapply topcoat like a balm throughout the day to refresh your look and feel."
+    }
+  ]
 }
