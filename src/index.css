@@ -7,11 +7,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+;
 }
-/* 
+
 body {
-  font-family: "Playfair Display", serif;
-} */
+  font-family: 'Circular-Loom', serif;
+} 
 
 h2 {
   margin-bottom: 1rem;
@@ -45,6 +46,7 @@ main {
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: -10vh
 }
 
 label {
@@ -73,6 +75,7 @@ input:focus {
 
 .card {
   margin: 1rem;
+  margin-top: 10vh
 }
 
 .card img {
@@ -135,19 +138,21 @@ input:focus {
 
 }
 .nav a button{  
-  width: 15vw;
-  height: 10vh;
+  width: 20vw;
+  height: 15vh;
   margin-left: 0.25vw; 
   margin-right: 0.25vw; 
+  margin-top: 10vh;
+  margin-bottom: 3vh;
   background-color: pink;
-  font-size: larger;
+  font-size: xx-large;
 }
 .filter-div{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 2vh;
+  margin-top: 8vh;
   margin-bottom: 2vh;
 }
 .brand-label{
@@ -175,4 +180,43 @@ input:focus {
 
 .collapsed-content.expanded {
   display: block;
+}
+
+
+/*form*/
+input[type=text] {
+  padding:10px;
+  margin:10px 0;
+  border-radius: 10px;
+}
+
+input{
+  width:100%;
+}
+
+.border-customized-input {
+  border: 2px solid #eee;
+}
+
+input, textarea {
+  font-family:inherit;
+  font-size: inherit;
+}
+
+.addProduct{
+  width: 10em;
+
+}
+
+.newproductheading{
+  margin-top: 100px;
+  font-size: 10em
+}
+
+.newproductform{
+  text-align: center;
+}
+
+.newProdInput{
+  text-align: center;
 }

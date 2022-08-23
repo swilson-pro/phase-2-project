@@ -1,16 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import MakeupCard from './MakeupCard'
 import Search from './Search';
 import {components} from 'react-select'
+import { v4 as uuidv4 } from 'uuid';
 
-function Home({favoritesArray, removeFavorite, newFavorite, isFavorite, makeupList, ifImageError,setSearchTerm,searchTerm, updateBrand, brand, updateProdType, prodType}) {
-    
-console.log('favoritesArray', favoritesArray)
+function Home({pOptionArray, optionArray, favoritesArray, removeFavorite, newFavorite, isFavorite, makeupList, ifImageError,setSearchTerm,searchTerm, updateBrand, brand, updateProdType, prodType}) {
+// idea to be able to dynamically add a new brand via New Product:
+// 1. create optionArray via state with all of the brands.
+// 2. map through each of the brands and create the <option> elements for each.
+// 3. fetch post loop through and extract brand names only. Add those brand names to the optionArray.
+
 
   return (
     <main>
+        <div className='filter-div'>
+        <label className='brand-label' htmlFor='brands'>Choose Brand:</label>
+        <select className='dropdown' name='brands' id='brands' onChange={updateBrand} value={brand}>
+            {optionArray.map((item) => {
+                return <option value={item.url}>{item.brand}</option>
+            })}
+        </select>
+
+
+        <label className='brand-label' htmlFor='prodtypes'>Choose Product Type:</label>
+        <select className='dropdown' name='prodtypes' id='prodtypes' onChange={updateProdType} value={prodType}>
+            {pOptionArray.map((item) => {
+                return <option value={item.url}>{item.prodType}</option>
+            })}
+        </select>
+
+        </div>
         {/* try to put a checkbox in the dropdown. */}
-        <div className="filter-div">
+        {/* <div className="filter-div">
         <label className='brand-label' htmlFor='brands'>Choose a brand:</label>
         <select className='dropdown' name='brands' id='brands' onChange={updateBrand} value={brand} >
             <option value='revlon'>Revlon</option>
@@ -20,7 +41,7 @@ console.log('favoritesArray', favoritesArray)
             <option value='colourpop'>Colourpop</option>
             <option value='almay'>Almay</option>
             <option value='alva'>Alva</option>
-            <option value='anna%sui'>Anna Sui</option>
+            <option value='anna%20sui'>Anna Sui</option>
             <option value='annabelle'>Annabelle</option>
             <option value='benefit'>Benefit</option>
             <option value='boosh'>Boosh</option>
@@ -61,7 +82,7 @@ console.log('favoritesArray', favoritesArray)
             <option value='sally%20b%27s%20skin%20yummies'>Sally B's Skin Yummies</option>
             <option value='salon%20perfect'>Salon Perfect</option>
             <option value='sante'>Sante</option>
-            <option value='sinful colours'>Sinful Colours</option>
+            <option value='sinful%20colours'>Sinful Colours</option>
             <option value='smashbox'>Smashbox</option>
             <option value='stila'>Stila</option>
             <option value='suncoat'>Suncoat</option>
@@ -71,6 +92,8 @@ console.log('favoritesArray', favoritesArray)
             <option value='zorah%20biocosmetiques'>Zorah Biocosmetiques</option>
             <option value=''>All Brands</option>
         </select>
+
+
         <label className='brand-label' htmlFor='prodtypes'>Choose a product Type:</label>
 
         <select className='dropdown' name='prodtypes' id='prodtypes' onChange={updateProdType} value={prodType}>
@@ -86,13 +109,13 @@ console.log('favoritesArray', favoritesArray)
             <option value='Nail%20polish'>Nail Polish</option>
             <option value=''>All Products</option>
         </select>
-        </div>
+        </div> */}
         <Search setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
 
         <ul className='cards'>
             {makeupList.map((makeup) => {
             return <MakeupCard 
-            key={makeup.id} 
+            key={uuidv4()} 
             isNotFavorite={favoritesArray.every((item) => {return item.id !== makeup.id})}
             removeFavorite={removeFavorite}
             newFavorite={newFavorite}

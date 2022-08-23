@@ -31,10 +31,11 @@ function NewProductForm({newProduct}) {
   }
 
   return ( 
-  <div>
-    <h2>New Product</h2>
-    <form onSubmit={handleSubmit}>
+  <div className='newproductform'>
+    <h2 className='newproductheading'>New Product</h2>
+    <form className='form' onSubmit={handleSubmit}>
       <input 
+      className='newProdInput'
       type="text"
       name="image"
       placeholder="Image URL"
@@ -42,6 +43,7 @@ function NewProductForm({newProduct}) {
       onChange={(e) => setImage(e.target.value)}
        />
       <input 
+      className='newProdInput'
       type="text"
       name="name"
       placeholder="Name of Product"
@@ -49,6 +51,7 @@ function NewProductForm({newProduct}) {
       onChange={(e) => setName(e.target.value)}
        />
       <input 
+      className='newProdInput'
       type="text"
       name="prodtype"
       placeholder="Product Type"
@@ -56,6 +59,7 @@ function NewProductForm({newProduct}) {
       onChange={(e) => setProductType(e.target.value)}
        />
       <input 
+      className='newProdInput'
       type="number"
       name="price"
       placeholder="Price"
@@ -63,6 +67,7 @@ function NewProductForm({newProduct}) {
       onChange={(e) => setPrice(parseFloat(e.target.value))}
        />
       <input 
+      className='newProdInput'
       type="text"
       name="brand"
       placeholder="Brand"
@@ -70,9 +75,9 @@ function NewProductForm({newProduct}) {
       onChange={(e) => setBrand(e.target.value)}
        />
 
-      <textarea cols='200' rows='10' value={description} onChange={(e) => setDescription(e.target.value)} />
+      <textarea className='newProdInput' cols='200' rows='10' value={description} onChange={(e) => setDescription(e.target.value)} />
       <br/>
-      <button type="submit">Add a Product</button>
+      <button className='addProduct' type="submit">Add Product</button>
     </form>
   </div>
   )

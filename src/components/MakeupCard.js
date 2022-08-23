@@ -40,7 +40,7 @@ function MakeupCard ({isNotFavorite, removeFavorite, newFavorite, makeup,ifImage
 
     return (
         <li className='card'>
-            <img src={image_link} alt={name} onError={()=> ifImageError(id)} />
+            <img src={image_link} alt={name} onError={()=> ifImageError(id,makeup)} />
             <h3>{name}</h3>
             <h4>{brand}</h4>
             <p>Price: {parseFloat(price)}</p>

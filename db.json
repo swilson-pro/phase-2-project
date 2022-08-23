@@ -1,20 +1,60 @@
 {
   "favorites": [
     {
-      "name": "Maybelline Dream Bouncy Blush",
-      "brand": "maybelline",
-      "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/51eacb9efebbaee39399e65ffe3d9416_ra,w158,h184_pa,w158,h184.png",
-      "price": "11.99",
-      "id": 414,
-      "description": "Now, blush has bounce! Freshest flush ever:• New bouncy texture is formulated with silicone elastomers• Lightweight like a powder, yet melts seamlessly into skin like a cream giving you a fresh flush• Dermatologist tested• Allergy tested• Non-comedogenic\n                    \n                    \n                    \n                        \n                        For best results: With your fingertips, blend a small amount of\n blush onto the apples of your cheeks, applying from your cheekbones to \nyour temples. To build colour intensity, apply more blush. \n                    "
-    },
-    {
       "name": "CoverGirl Outlast Lipcolor",
       "brand": "covergirl",
       "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/be04329866e96a0077545d230489d7a9_ra,w158,h184_pa,w158,h184.jpeg",
       "price": "12.99",
       "id": 102,
       "description": "CoverGirls very popular longwear lip color just got better! The advanced formula with resilient, brilliant color and new applicator gives you up to 24 hours of color in just 2 easy, breezy steps.Features:Lasts up to 24 hoursBeautiful shades that are food proof and transfer resistant all day!Moisturizing topcoat keeps lips feeling moist, soft and smoothApplication Tips: Apply color to clean lips. Let dry 60 seconds. Apply moisturizing topcoat. Reapply topcoat like a balm throughout the day to refresh your look and feel."
+    },
+    {
+      "name": "CoverGirl Ink it! By Perfect Point Plus Eyeliner",
+      "brand": "covergirl",
+      "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/e4763257a2290da070bd300212d16db8_ra,w158,h184_pa,w158,h184.jpeg",
+      "price": "6.99",
+      "id": 239,
+      "description": "Get inked — without the commitment! Ink It! colors glide on smoothly and\n easily without skipping, dragging, or pulling. The bright, bold shades \nlast all day long.Features: Bright, bold colors for new looks Lasts all day long ­­— no smudging or creasingExpert precision applicationTwist up design"
+    },
+    {
+      "name": "CoverGirl Outlast Stay Brilliant Nail Gloss",
+      "brand": "covergirl",
+      "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/ad5297ce5c35c04daa3c85b6906aaedc_ra,w158,h184_pa,w158,h184.png",
+      "price": "5.99",
+      "id": 123,
+      "description": "Dare to go topless with CoverGirl Outlast Stay Brilliant Nail Gloss. New high-gloss nail polish formula that combines a base coat, high-gloss color, and a chip-resistant top coat in one simple step. Features:High gloss colourLasts as long as one week3-in-1 formula - base coat, colour, and top coatQuick, easy and convenientHow to Apply:Step 1: File nails to your desired length and shape.Step 2: Brush your favorite nail color on top of each nail. Allow nail polish to fully dry.Step 3: Apply a second coat for deeper pigment."
+    },
+    {
+      "name": "Revlon PhotoReady Cream Blush",
+      "brand": "revlon",
+      "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/1b84cb453bc5527d4ecb11b5967cd135_ra,w158,h184_pa,w158,h184.jpeg",
+      "price": "13.49",
+      "id": 417,
+      "description": "Revlon PhotoReady™ Cream Blush was \ncreated by Global Artistic Director Gucci Westman for the Spring 2012 \ncollection. Inspired by the glowing skin of a beach beauty, these silky \ncream blushes glide on smoothly provide a dewy flush of color for a \nhealthy, gorgeous glow.Features: Creamy blush provides buildable, beautiful flush of colorLightweight formula with silky soft feel on skinBlends evenly over cheeks for smooth applicationPhotochromatic pigments bend and reflect light to provide cheeks with a beautiful glow"
+    },
+    {
+      "name": "pate gris",
+      "brand": "payot",
+      "image_link": "http://cdn.shopify.com/s/files/1/0049/3073/2122/products/pate-grise-originale-payot-3390150561580-packshot_grande.jpg?v=1644351241",
+      "price": 10,
+      "id": "M6",
+      "description": "great product."
+    },
+    {
+      "name": "CoverGirl Clean Oil Control Makeup ",
+      "brand": "covergirl",
+      "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/700e432a504f4784792e84d498c982b7_ra,w158,h184_pa,w158,h184.jpeg",
+      "price": "9.49",
+      "id": 341,
+      "description": "With CoverGirl's Clean Oil Control Makeup, you'll get all the shine control you \nwant – without the drying coverage you don't. The Clean foundation with \ngentle oil absorbing powders and skin conditioners, help prevent \ndryness. Best of all, it won't clog pores, for a clean, shine-free face,\n hour after hour!Features: Oil and fragrance freeNon-comedogenic (won’'t clog pores)Dermatologically-testedWon’'t clog pores"
+    },
+    {
+      "name": "Maybelline Face Studio Master Hi-Light Light Booster Bronzer",
+      "brand": "maybelline",
+      "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/991799d3e70b8856686979f8ff6dcfe0_ra,w158,h184_pa,w158,h184.png",
+      "price": "14.99",
+      "id": 495,
+      "description": "Maybelline Face Studio Master Hi-Light Light Boosting bronzer formula has an expert \nbalance of shade + shimmer illuminator for natural glow. Skin goes \nsoft-lit with zero glitz.\n\n\t\tFor Best Results: Brush over all shades in palette and gently sweep over \ncheekbones, brow bones, and temples, or anywhere light naturally touches\n the face.\n\n\t\t\n\t\n\n                    "
     }
   ]
 }

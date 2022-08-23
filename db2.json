@@ -17,6 +17,24 @@
       "price": 32,
       "description": "Congratulations, It’s a Palette! This newbie palette delivers everything you need with the best of theBalm! You may think octuplet girls are a handful, but these 8 shades of theBalmbina give you ample coverage. This all-inclusive, pretty little lady is full of our clean and green must haves. As no two little ones are alike, this breaks down to 4 blendable eyeshadows, two stunning blushes, a matte bronzer, and our newest highlight shimmer, Let’s Bolt. Each powder is versatile and can be used anywhere on your face, so get ready to light up your life.",
       "id": 5
+    },
+    {
+      "image_link": "https://cdn.shopify.com/s/files/1/1084/6524/products/theBalmNuit2640x2640_1400x1400.png?v=1657639886",
+      "name": "THEBALM NUIT",
+      "product_type": "Mascara",
+      "brand": "theBalm",
+      "price": 19,
+      "description": "Dress up your lashes in a fabulous, new black coat of theBalm Nuit® because you deserve to have a good night!\n \nTake your look from day to night with theBalm Nuit® mascara, a midnight black, bold & buildable formula that’s highly pigmented & vegan. The conical fiber brush delivers a full mascara loading while reaching those hard-to-cover corner lashes leaving you with a long-lasting, silky and voluminous finish. Enriched with natural oils and waxes, this mascara conditions, coats and never disappoints.",
+      "id": 6
+    },
+    {
+      "image_link": "https://www.chanel.com/us/img/t_one/q_auto:good,fl_lossy,dpr_1.2,f_auto/w_3000/prd-emea/sys-master/content/P1/h41/h03/9587630374942-2880x900VISUELFOCUSGAMMEx20.jpg",
+      "name": "ROUGE ALLURE L’EXTRAIT",
+      "product_type": "Lipstick",
+      "brand": "Chanel",
+      "price": 55,
+      "description": "A new light-reflecting, lip-conditioning formula with ultra-pigmented hues. A silky, comfortable texture that glides on easily, delivering continuous hydration and protection throughout the day. 20 satiny shades for an intense, luminous, daring makeup look.",
+      "id": 7
     }
   ]
 }
